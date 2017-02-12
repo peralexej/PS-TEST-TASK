@@ -29,11 +29,6 @@ public class AcceptanceTest {
         ZIP_PARAMETERS.setIncludeRootFolder(false);
     }
 
-    @Before
-    public void setUp() throws Exception {
-        //// TODO: 12.02.2017  
-    }
-
     @Test
     public void test() throws Throwable {
         Cucumber cucumber = new Cucumber(CucumberRunner.class);

@@ -10,6 +10,7 @@ import cucumber.api.CucumberOptions;
         features = "src/test/resources/",
         format = {"pretty", "html:target/cucumber1", "json:target/cucumber1/cucumber_json_report.json", "junit:target/cucumber-junit1/cucumber.xml"},
         glue = {"com.peterservice.test.functional"}
+//        , tags = {"@post"}
 )
 public class CucumberRunner {
 }
