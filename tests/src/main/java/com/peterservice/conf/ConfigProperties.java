@@ -5,16 +5,10 @@ import java.util.Properties;
 
 /**
  * Класс для конфигов
- *
  */
 
 public class ConfigProperties {
     private static final String DEFAULT_ENV_ADDRESS = "default_env_address";
-    private static final String LOGIN = "login";
-    private static final String DB_USER = "db_user";
-    private static final String DB_URL = "db_url";
-    private static final String DB_PASSWORD = "db_password";
-    private static final String PASSWORD = "password";
     private static final String LOG_DIR = "logs.dir";
 
     private static final String CONFIG_FILE_NAME = "config.properties";

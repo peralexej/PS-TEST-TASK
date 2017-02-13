@@ -4,7 +4,6 @@ import cucumber.api.CucumberOptions;
 
 /**
  * Класс раннер кукумбера
- *
  */
 @CucumberOptions(
         features = "src/test/resources/",

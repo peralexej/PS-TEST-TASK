@@ -7,7 +7,6 @@ import cucumber.api.junit.Cucumber;
 import net.lingala.zip4j.model.ZipParameters;
 import net.lingala.zip4j.util.Zip4jConstants;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
@@ -17,7 +16,6 @@ import java.util.List;
 
 /**
  * Базовый класс, который запускает кукумбер фичи и завершает их.
- *
  */
 public class AcceptanceTest {
     private final ZipParameters ZIP_PARAMETERS = new ZipParameters();

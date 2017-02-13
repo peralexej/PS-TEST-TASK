@@ -6,7 +6,6 @@ import java.util.logging.LogRecord;
 
 /**
  * Значения даты и времени для записей в логгер
- *
  */
 
 public class RecordFormatter extends Formatter {

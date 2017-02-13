@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * Обработка сообщения об ошибке
- *
  */
 
 public class TestFailedException extends Exception {

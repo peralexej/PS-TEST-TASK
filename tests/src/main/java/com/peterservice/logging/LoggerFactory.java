@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 
 /**
  * Класс реализующий работу логгера
- *
  */
 
 final class LoggerFactory {

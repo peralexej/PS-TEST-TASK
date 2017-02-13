@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 /**
  * Контекстная мапа для хранения объектов
- *
  */
 
 public class TestContext {

@@ -12,7 +12,6 @@ import java.util.logging.StreamHandler;
 
 /**
  * Методы для работы с логгером
- *
  */
 
 public final class LoggingUtils {

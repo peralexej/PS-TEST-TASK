@@ -13,10 +13,9 @@ import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import static com.peterservice.context.ContextKey.*;
+import static com.peterservice.context.ContextKey.STATUS_CODE;
 
 /**
- *
  * <p>
  * Класс содержит методы, реализующие работу request/response с помощью Rest Template, ловит
  * необходимые данные и добавляет их в ResultsContainer

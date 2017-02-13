@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 
 /**
  * Запись данных из кукумбера в логгер
- *
  */
 
 public final class Hooks {

@@ -33,8 +33,8 @@ public class ApiTestSteps {
     }
 
     @Then("^Response contains$")
-    public void responseContains(List<String>values) throws Throwable {
-        logger.info("size - "+values.size()+"");
+    public void responseContains(List<String> values) throws Throwable {
+        logger.info("size - " + values.size() + "");
         for (String pair : values) {
             String key = pair.substring(0, pair.indexOf(":"));
             String value = pair.substring(pair.indexOf(":") + 1);
