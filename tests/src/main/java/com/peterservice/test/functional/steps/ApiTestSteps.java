@@ -2,12 +2,9 @@ package com.peterservice.test.functional.steps;
 
 import com.peterservice.conf.ConfigProperties;
 import com.peterservice.context.TestContext;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -44,5 +41,12 @@ public class ApiTestSteps {
             assertTrue(key + " - not contains in response", getResponseAsString().contains(key));
             assertTrue(value + " - not contains in response", getResponseAsString().contains(value));
         }
+    }
+
+    @Then("^Response id > (\\d+)$")
+    public void responseId(int value) throws Throwable {
+        String response = getResponseAsString();
+        int id = Integer.parseInt(response.substring(response.indexOf(":") + 1).replaceAll("}", ""));
+        assertTrue(value < id);
     }
 }
