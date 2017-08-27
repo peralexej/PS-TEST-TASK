@@ -1,33 +1,42 @@
 @get
 Feature: Get
 
-  Scenario: pack list
-    When Send get request to url "packs"
+  Scenario: product offering by id
+    When Send get request to url "/poffering/1"
     Then Response contains
-      | packId:1        |
-      | name:Internet_L |
-      | packId:2        |
-      | name:Internet_S |
-      | packId:3        |
-      | name:SMS        |
+      | id:1                      |
+      | code:code1                |
+      | name:1st product offering |
 
-  Scenario: packs list of subscriber
-    When Send get request to url "subscriber/1/packs"
+  Scenario: active product offerings
+    When Send get request to url "/poffering/active"
     Then Response contains
-      | packId:1              |
-      | name:Internet_L       |
-      | actionType:ACTIVATE   |
-      | packId:2              |
-      | name:Internet_S       |
-      | actionType:DEACTIVATE |
-      | packId:3              |
-      | name:SMS              |
-      | actionType:ACTIVATE   |
+      | id:   |
+      | code: |
+      | name: |
 
-  Scenario: packs list with limit and offset
-    When Send get request to url "packs" limit = 2 offset = 1
+  Scenario: product offering by name
+    When Send get request to url "/poffering?name=1st"
     Then Response contains
-      | packId:2        |
-      | name:Internet_S |
-      | packId:3        |
-      | name:SMS        |
+      | id:1                      |
+      | code:code1                |
+      | name:1st product offering |
+
+
+  Scenario: product offering by name
+    When Send get request to url "/poffering/avail/30"
+    Then Response contains
+      | sidRegion:Chelyabinskaya region |
+      | sidBranch:TSCHF                 |
+      | salesChannel:USSD               |
+      | availabilityAction:1            |
+      | dateRange:                      |
+      | dateFrom:12.01.2017 06:47       |
+      | dateTo:12.11.2017 06:47         |
+      | productOffering:                |
+      | id:2                            |
+      | code:code2                      |
+      | name:2nd product offering       |
+      | validFor:                       |
+      | dateFrom:12.01.2017 06:47       |
+      | dateTo:12.11.2017 06:47         |

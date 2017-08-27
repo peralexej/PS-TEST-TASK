@@ -1,28 +1,36 @@
 @post
 Feature: Post
 
-  Scenario: Activate package for subscriber
-    When Send post request to "subscriber/1/packs/activate" with parameters
-      | packageId:1                 |
-      | activationDate:13.02.2017   |
-      | deactivationDate:14.02.2017 |
+  @ping
+  Scenario: New product offering
+    When Send post request to "/poffering/new" with parameters
+      | code:lalala                   |
+      | name:gg123                    |
+      | description":Opisanie         |
+      | dateStart:27-07-2017 09:53:33 |
+      | dateEnd":27-09-2017 09:53:33  |
+    Then Response contains
+      | id:                   |
+      | code:lalala           |
+      | name":gg123           |
+      | description":Opisanie |
 
-    Then Response id > 100
-
-  Scenario: Deactivate package for subscriber
-    When Send post request to "subscriber/1/packs/deactivate" with parameters
-      | packageId:1                 |
-      | deactivationDate:14.02.2017 |
-
-    Then Response id > 100
-
-  Scenario: Provising
-    When Send post request to "provision/packs" with parameters
-      | subscriberId:2              |
-      | packageId:2                 |
-      | actionType:DEACTIVATE       |
-      | activationDate:12.02.2017   |
-      | deactivationDate:15.02.2017 |
-      | traceNumber:100             |
-
-    Then Response id > 100
+  Scenario: Product offering avil
+    When Send post request to "/poffering/avail/new" with parameters
+      | regionId:15               |
+      | branchId:  7              |
+      | salesChannel:26           |
+      | availabilityAction:1      |
+      | Zone:18                   |
+      | dateFrom:12.01.2017 06:47 |
+      | dateTo:12.11.2017 06:47   |
+      | productOfferingId:2       |
+    Then Response contains
+      | sidRegion:Chelyabinskaya region |
+      | sidBranch:TSCHF                 |
+      | salesChannel:USSD               |
+      | availabilityAction:1            |
+      | productOffering:                |
+      | id:2                            |
+      | code:code2                      |
+      | name:2nd product offering       |
