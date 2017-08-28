@@ -23,7 +23,7 @@ Feature: Get
       | name:1st product offering |
 
 
-  Scenario: product offering by name
+  Scenario: product offering avail by id
     When Send get request to url "poffering/avail/30"
     Then Response contains
       | sidRegion:Chelyabinskaya region |
