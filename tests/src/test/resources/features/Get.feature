@@ -2,21 +2,21 @@
 Feature: Get
 
   Scenario: product offering by id
-    When Send get request to url "/poffering/1"
+    When Send get request to url "poffering/1"
     Then Response contains
       | id:1                      |
       | code:code1                |
       | name:1st product offering |
 
   Scenario: active product offerings
-    When Send get request to url "/poffering/active"
+    When Send get request to url "poffering/active"
     Then Response contains
       | id:   |
       | code: |
       | name: |
 
   Scenario: product offering by name
-    When Send get request to url "/poffering?name=1st"
+    When Send get request to url "poffering?name=1st"
     Then Response contains
       | id:1                      |
       | code:code1                |
@@ -24,7 +24,7 @@ Feature: Get
 
 
   Scenario: product offering by name
-    When Send get request to url "/poffering/avail/30"
+    When Send get request to url "poffering/avail/30"
     Then Response contains
       | sidRegion:Chelyabinskaya region |
       | sidBranch:TSCHF                 |

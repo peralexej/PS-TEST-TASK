@@ -14,7 +14,7 @@ Feature: Put
       | productOfferingId:2       |
       | typeOfRule:1              |
 
-    When Send get request to url "/poffering/avail/30"
+    When Send get request to url "poffering/avail/30"
     Then Response contains
       | sidRegion:Sverdlovskaya region |
       | sidBranch:UF                   |
@@ -42,7 +42,7 @@ Feature: Put
       | dateTo:12.11.2017 06:47   |
       | productOfferingId:2       |
       | typeOfRule:1              |
-    When Send get request to url "/poffering/avail/30"
+    When Send get request to url "poffering/avail/30"
     Then Response contains
       | sidRegion:Chelyabinskaya region |
       | sidBranch:TSCHF                 |

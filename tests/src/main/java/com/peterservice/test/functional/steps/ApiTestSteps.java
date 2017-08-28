@@ -4,12 +4,15 @@ import com.peterservice.conf.ConfigProperties;
 import com.peterservice.context.TestContext;
 import static com.peterservice.view.ApiTestView.createJsonMapForRequest;
 import static com.peterservice.view.ApiTestView.getResponseAsString;
+import static com.peterservice.view.ApiTestView.sendDeleteRequest;
 import static com.peterservice.view.ApiTestView.sendGetRequest;
 import static com.peterservice.view.ApiTestView.sendPostRequest;
 import static com.peterservice.view.ApiTestView.sendPutRequest;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -59,6 +62,11 @@ public class ApiTestSteps {
     sendPostRequest(url, createJsonMapForRequest(values));
   }
 
+  @When("^Send delete request to url \"([^\"]*)\"$")
+  public void sendDeleteRequestTo(String url) throws Throwable {
+    sendDeleteRequest(url);
+  }
+
   /**
    * Send put request to with parameters.
    *
@@ -98,5 +106,10 @@ public class ApiTestSteps {
     String response = getResponseAsString();
     int id = Integer.parseInt(response.substring(response.indexOf(":") + 1).replaceAll("}", ""));
     assertTrue(value < id);
+  }
+
+  @Then("^Response is null$")
+  public void responseIsNull() throws Throwable {
+    assertNull(getResponseAsString());
   }
 }

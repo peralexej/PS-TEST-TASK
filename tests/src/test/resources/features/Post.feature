@@ -3,10 +3,10 @@ Feature: Post
 
   @ping
   Scenario: New product offering
-    When Send post request to "/poffering/new" with parameters
+    When Send post request to "poffering/new" with parameters
       | code:lalala                   |
       | name:gg123                    |
-      | description":Opisanie         |
+      | description:Opisanie         |
       | dateStart:27-07-2017 09:53:33 |
       | dateEnd":27-09-2017 09:53:33  |
     Then Response contains
@@ -16,7 +16,7 @@ Feature: Post
       | description":Opisanie |
 
   Scenario: Product offering avil
-    When Send post request to "/poffering/avail/new" with parameters
+    When Send post request to "poffering/avail/new" with parameters
       | regionId:15               |
       | branchId:  7              |
       | salesChannel:26           |

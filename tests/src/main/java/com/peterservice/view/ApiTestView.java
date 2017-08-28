@@ -59,6 +59,12 @@ public class ApiTestView {
     putResponseToContainer(result);
   }
 
+  public static void sendDeleteRequest(String value) {
+    String url = getCurrentUrl() + "/" + value;
+    RestTemplate template = getRestTemplate(url);
+    template.delete(url);
+  }
+
 
   /**
    * Send put request.
