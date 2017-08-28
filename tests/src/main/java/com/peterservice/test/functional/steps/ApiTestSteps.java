@@ -8,7 +8,6 @@ import static com.peterservice.view.ApiTestView.sendDeleteRequest;
 import static com.peterservice.view.ApiTestView.sendGetRequest;
 import static com.peterservice.view.ApiTestView.sendPostRequest;
 import static com.peterservice.view.ApiTestView.sendPutRequest;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import static junit.framework.TestCase.assertTrue;
@@ -62,6 +61,12 @@ public class ApiTestSteps {
     sendPostRequest(url, createJsonMapForRequest(values));
   }
 
+  /**
+   * Send delete request to.
+   *
+   * @param url the url
+   * @throws Throwable the throwable
+   */
   @When("^Send delete request to url \"([^\"]*)\"$")
   public void sendDeleteRequestTo(String url) throws Throwable {
     sendDeleteRequest(url);
@@ -108,6 +113,11 @@ public class ApiTestSteps {
     assertTrue(value < id);
   }
 
+  /**
+   * Response is null.
+   *
+   * @throws Throwable the throwable
+   */
   @Then("^Response is null$")
   public void responseIsNull() throws Throwable {
     assertNull(getResponseAsString());

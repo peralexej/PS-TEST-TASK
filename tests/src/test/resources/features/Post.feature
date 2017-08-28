@@ -6,7 +6,7 @@ Feature: Post
     When Send post request to "poffering/new" with parameters
       | code:lalala                   |
       | name:gg123                    |
-      | description:Opisanie         |
+      | description:Opisanie          |
       | dateStart:27-07-2017 09:53:33 |
       | dateEnd":27-09-2017 09:53:33  |
     Then Response contains
